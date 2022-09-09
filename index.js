@@ -14,7 +14,7 @@ rl.on('line', function(line){
 	sortlist(arr)
     } else arr.push(line)
 })
-
+    
 /*
 fs.readFile('text.txt', function(err, data) {
     if(err) throw err;
@@ -29,12 +29,15 @@ function swap(list, i, j) {
 }
 
 function sortlist(unsorted) {
+    var count = unsorted.length;
+    
     for (var i = 0; i < unsorted.length; i++) {
-	for (var j = i + 1; j < unsorted.length; j++) {
+	for (var j = i + 1; j < count; j++) {
 	    if (unsorted[i] > unsorted[j]) {
 		swap(unsorted, i, j);
 	    }
 	}
+	count -= 1
 	console.log(unsorted[i])
     }
 }

@@ -3,6 +3,10 @@ import fileinput
 
 data = []
 
+#with open('text.txt') as text:
+#        for line in text:
+#                data.append(line.replace("\n", ""))
+
 for line in fileinput.input():
         if 'exit' == line.rstrip():
                 break

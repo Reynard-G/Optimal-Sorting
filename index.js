@@ -2,7 +2,6 @@ var readline = require('readline');
 var fs = require('fs');
 var arr = [];
 
-/*
 var rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
@@ -12,16 +11,17 @@ var rl = readline.createInterface({
 rl.on('line', function(line){
     if(line.replace(/\n/, "").length == 0) {
 	rl.close();
-	sortlist(data)
-    } else data.push(line)
+	sortlist(arr)
+    } else arr.push(line)
 })
-*/
 
+/*
 fs.readFile('text.txt', function(err, data) {
     if(err) throw err;
     arr = data.toString().split("\n");
     sortlist(arr)
 });
+*/
 
 function swap(list, i, j) {
     [list[i], list[j]] = [list[j], list[i]];

@@ -18,7 +18,7 @@ rl.on('line', function(line){
 })
 */
 
-fs.readFile('text.txt', function(err, data) {
+fs.readFile('/usr/share/dict/words', function(err, data) {
     if(err) throw err;
     arr = data.toString().split("\n");
     for (let element of splitSort(arr)) {

@@ -1,6 +1,8 @@
 var readline = require('readline');
 var fs = require('fs');
+const { exec } = require("child_process");
 var arr = [];
+
 /*
 var rl = readline.createInterface({
     input: process.stdin,
@@ -18,6 +20,22 @@ rl.on('line', function(line){
 })
 */
 
+exec("cat /usr/share/dict/words | shuf", (error, stdout) => {
+    if (error !== null) {
+	console.log(`exec error: ${error}`)
+    }
+    arr = stdout.toString().split("\n");
+    // Sorting using own algorithm
+    for (let element of splitSort(arr)) {
+	console.log(element)
+    }
+    // Sorting using built-in algorithm
+//    for (let element of arr.sort()) {
+//	console.log(element)
+//    }
+});
+
+/*
 fs.readFile('/usr/share/dict/words', function(err, data) {
     if(err) throw err;
     arr = data.toString().split("\n");
@@ -25,6 +43,7 @@ fs.readFile('/usr/share/dict/words', function(err, data) {
         console.log(element)
     }
 });
+*/
 
 function combine(left, right) {
     let data = []

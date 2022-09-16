@@ -19,6 +19,11 @@ rl.on('close', function(line) {
     splitSort(arr).forEach(function (element) {
 	console.log(element)
     });
+    /*
+    arr.sort().forEach(function (element) {
+	console.log(element)
+    });
+    */
 });
 
 /*

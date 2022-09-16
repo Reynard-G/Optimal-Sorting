@@ -3,7 +3,6 @@ var fs = require('fs');
 const { exec } = require("child_process");
 var arr = [];
 
-/*
 var rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
@@ -13,13 +12,16 @@ var rl = readline.createInterface({
 rl.on('line', function(line){
     if(line.replace(/\n/, "").length == 0) {
 	rl.close();
-	splitSort(arr).forEach(function (element) {
-	    console.log(element)
-	});
     } else arr.push(line)
-})
-*/
+});
 
+rl.on('close', function(line) {
+    splitSort(arr).forEach(function (element) {
+	console.log(element)
+    });
+});
+
+/*
 exec("cat /usr/share/dict/words | shuf", (error, stdout) => {
     if (error !== null) {
 	console.log(`exec error: ${error}`)
@@ -33,15 +35,6 @@ exec("cat /usr/share/dict/words | shuf", (error, stdout) => {
 //    for (let element of arr.sort()) {
 //	console.log(element)
 //    }
-});
-
-/*
-fs.readFile('/usr/share/dict/words', function(err, data) {
-    if(err) throw err;
-    arr = data.toString().split("\n");
-    for (let element of splitSort(arr)) {
-        console.log(element)
-    }
 });
 */
 
